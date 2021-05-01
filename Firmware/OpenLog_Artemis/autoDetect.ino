@@ -621,7 +621,7 @@ void configureDevice(node * temp)
         sensor->setIntermeasurementPeriod(sensorSetting->intermeasurementPeriod - 1);
         sensor->setXTalk(sensorSetting->crosstalk);
         sensor->setOffset(sensorSetting->offset);
-
+	      sensor->setROI(sensorSetting->x, sensorSetting->y, sensorSetting->opticalCenter);// call the setROI() function pointing to vars in the struct_VL531LX in settings.h and pass those as args to the setROI() function
         sensor->startRanging(); //Write configuration bytes to initiate measurement
       }
       break;
