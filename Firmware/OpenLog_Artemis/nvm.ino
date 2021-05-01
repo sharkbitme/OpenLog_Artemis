@@ -485,6 +485,9 @@ void recordDeviceSettingsToFile()
             settingsFile.println((String)base + "intermeasurementPeriod=" + nodeSetting->intermeasurementPeriod);
             settingsFile.println((String)base + "offset=" + nodeSetting->offset);
             settingsFile.println((String)base + "crosstalk=" + nodeSetting->crosstalk);
+            settingsFile.println((String)base + "x=" + nodeSetting->x);
+            settingsFile.println((String)base + "y=" + nodeSetting->y);
+            settingsFile.println((String)base + "opticalCenter=" + nodeSetting ->opticalCenter);
           }
           break;
         case DEVICE_GPS_UBLOX:
@@ -894,6 +897,13 @@ bool parseDeviceLine(char* str) {
             nodeSetting->offset = d;
           else if (strcmp(deviceSettingName, "crosstalk") == 0)
             nodeSetting->crosstalk = d;
+          else if (strcmp(deviceSettingName, "x") == 0)
+            nodeSetting->x = d;
+          else if (strcmp(deviceSettingName, "y") == 0)
+            nodeSetting->y = d;
+          else if (strcmp(deviceSettingName, "opticalCenter") == 0)
+            nodeSetting->opticalCenter = d;
+          else
           else
             SerialPrintf2("Unknown device setting: %s\r\n", deviceSettingName);
         }
