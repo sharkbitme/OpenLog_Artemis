@@ -145,6 +145,9 @@ struct struct_VL53L1X {
   int intermeasurementPeriod = 140; //ms
   int offset = 0; //In mm
   int crosstalk = 0;
+  int x = 4;
+  int y = 4;
+  int opticalCenter = 199;
   unsigned long powerOnDelayMillis = minimumQwiicPowerOnDelay; // Wait for at least this many millis before communicating with this device. Increase if required!
 };
 
