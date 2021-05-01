@@ -621,7 +621,6 @@ void configureDevice(node * temp)
         sensor->setIntermeasurementPeriod(sensorSetting->intermeasurementPeriod - 1);
         sensor->setXTalk(sensorSetting->crosstalk);
         sensor->setOffset(sensorSetting->offset);
-
         sensor->startRanging(); //Write configuration bytes to initiate measurement
       }
       break;
